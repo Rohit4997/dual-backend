@@ -1,5 +1,5 @@
 {
-  "name": "@rohit4997/dual-backend",
+  "name": "@rohit_dhakad/dual-backend",
   "version": "0.1.0",
   "description": "One React Native app, two swappable backends: your REST API or Firebase. Phone OTP auth, CRUD repositories and WatermelonDB offline sync with identical interfaces for both.",
   "keywords": ["react-native", "firebase", "firestore", "rest", "watermelondb", "offline-first", "sync", "phone-auth", "otp", "backend-agnostic"],

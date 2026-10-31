@@ -1,4 +1,4 @@
-// @rohit4997/dual-backend — one app, two swappable backends (your REST API
+// @rohit_dhakad/dual-backend — one app, two swappable backends (your REST API
 // or Firebase), for React Native. No runtime dependencies: Firebase,
 // WatermelonDB's synchronize and your HTTP client are passed in.
 

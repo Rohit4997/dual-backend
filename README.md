@@ -1,4 +1,4 @@
-# @rohit4997/dual-backend
+# @rohit_dhakad/dual-backend
 
 **One React Native app, two swappable backends.** Start on Firebase (no server to run), move to
 your own REST API when you outgrow it — without touching screens. Every feature has one
@@ -18,7 +18,7 @@ Plus `ServiceError` (one error type for both), `selectBackend`, `createFetchHttp
 so a project only needs the pieces it actually uses, and nothing here imports an SDK.
 
 ```bash
-npm install @rohit4997/dual-backend
+npm install @rohit_dhakad/dual-backend
 ```
 
 ## Pattern
@@ -27,7 +27,7 @@ Define your app's own service interfaces (your domain), then build each implemen
 library's adapters, and pick one at build time:
 
 ```ts
-import {selectBackend} from '@rohit4997/dual-backend';
+import {selectBackend} from '@rohit_dhakad/dual-backend';
 
 export const BACKEND_MODE = 'firebase'; // or 'rest'
 
@@ -45,7 +45,7 @@ Every adapter throws `ServiceError` with a `code`:
 `invalid | unauthenticated | forbidden | not_found | conflict | rate_limited | network | unknown`.
 
 ```ts
-import {errorMessage} from '@rohit4997/dual-backend';
+import {errorMessage} from '@rohit_dhakad/dual-backend';
 try { await services.notes.create(input); }
 catch (err) { Alert.alert('Error', errorMessage(err, 'Could not save')); }
 ```
@@ -57,7 +57,7 @@ Wrapping an existing API client? Convert its errors with `statusToErrorCode(stat
 Use your own (it just needs `request(req): Promise<T>` throwing `ServiceError`), or:
 
 ```ts
-import {createFetchHttpClient} from '@rohit4997/dual-backend';
+import {createFetchHttpClient} from '@rohit_dhakad/dual-backend';
 
 const http = createFetchHttpClient({
   baseUrl: 'https://api.example.com',
@@ -70,7 +70,7 @@ const http = createFetchHttpClient({
 
 ```ts
 import auth from '@react-native-firebase/auth';
-import {createFirebasePhoneOtp, createRestPhoneAuth, createFirebasePhoneAuth} from '@rohit4997/dual-backend';
+import {createFirebasePhoneOtp, createRestPhoneAuth, createFirebasePhoneAuth} from '@rohit_dhakad/dual-backend';
 
 const otp = createFirebasePhoneOtp(() => auth());
 
@@ -140,7 +140,7 @@ pass `queryToParams` for anything else.
 
 ```ts
 import {synchronize} from '@nozbe/watermelondb/sync';
-import {createWatermelonSync, createRestSyncTransport, createFirestoreSyncTransport} from '@rohit4997/dual-backend';
+import {createWatermelonSync, createRestSyncTransport, createFirestoreSyncTransport} from '@rohit_dhakad/dual-backend';
 
 const transport = selectBackend(BACKEND_MODE, {
   rest: () => createRestSyncTransport({
