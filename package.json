@@ -1,0 +1,27 @@
+{
+  "name": "@rohit4997/dual-backend",
+  "version": "0.1.0",
+  "description": "One React Native app, two swappable backends: your REST API or Firebase. Phone OTP auth, CRUD repositories and WatermelonDB offline sync with identical interfaces for both.",
+  "keywords": ["react-native", "firebase", "firestore", "rest", "watermelondb", "offline-first", "sync", "phone-auth", "otp", "backend-agnostic"],
+  "license": "MIT",
+  "author": "Rohit Dhakad",
+  "repository": {"type": "git", "url": "git+https://github.com/Rohit4997/dual-backend.git"},
+  "homepage": "https://github.com/Rohit4997/dual-backend#readme",
+  "bugs": "https://github.com/Rohit4997/dual-backend/issues",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": ["lib", "src", "README.md", "LICENSE"],
+  "sideEffects": false,
+  "scripts": {
+    "build": "rm -rf lib && tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build"
+  },
+  "devDependencies": {
+    "typescript": "5.4.5",
+    "vitest": "2.1.9"
+  },
+  "engines": {"node": ">=18"},
+  "publishConfig": {"access": "public"}
+}
